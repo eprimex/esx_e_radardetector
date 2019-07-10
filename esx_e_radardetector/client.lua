@@ -18,19 +18,19 @@ RegisterNetEvent('tutka:ShowRadarBlip')
 AddEventHandler('tutka:ShowRadarBlip', function()
 	if IsPedInAnyVehicle(PlayerPedId(), false) then
 		TutkaEnabled = true
-		ESX.ShowNotification("Käynnistit tutkanpaljastimen")
+		ESX.ShowNotification("Radar Detector turned on")
 	elseif wasOn then
 		TutkaEnabled = false
 		wasOn = false
-		ESX.ShowNotification("Tutka ei nyt käynnisty automaattisesti")
+		ESX.ShowNotification("Radar Detector will no longer turn on automatically")
 	else
-		ESX.ShowNotification("Et ole autossa")
+		ESX.ShowNotification("You're not in a vehicle")
 	end
 end)
 
 RegisterNetEvent('tutka:RemoveRadarBlip')
 AddEventHandler('tutka:RemoveRadarBlip', function()
-	ESX.ShowNotification("Sammutit tutkanpaljastimen")
+	ESX.ShowNotification("Radar Detector turned off")
 	TutkaEnabled = false
 	Citizen.Wait(1000)
 	for k, existingBlip in pairs(blipsCops) do
@@ -53,7 +53,7 @@ function createBlip(id)
 	local blip = GetBlipFromEntity(ped)
 
 	if not DoesBlipExist(blip) then 
-		ESX.ShowNotification("Tutka havaittu lähettyvillä")
+		ESX.ShowNotification("Radar detected nearby")
 		blip = AddBlipForEntity(ped)
 		SetBlipSprite(blip, 60)
 		ShowHeadingIndicatorOnBlip(blip, true) 
@@ -91,14 +91,14 @@ Citizen.CreateThread(function()
 										local blip = GetBlipFromEntity(ped)
 										if DoesBlipExist(blip) then 
 											RemoveBlip(blip)
-											ESX.ShowNotification("Lähettyvillä ollut tutka katosi")
+											ESX.ShowNotification("Radar close to you has disappeared")
 										end
 									end
 								else
 									local blip = GetBlipFromEntity(ped)
 									if DoesBlipExist(blip) then 
 										RemoveBlip(blip)
-										ESX.ShowNotification("Lähettyvillä ollut tutka katosi")
+										ESX.ShowNotification("Radar close to you has disappeared")
 									end
 								end
 							end
