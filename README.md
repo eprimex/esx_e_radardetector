@@ -19,7 +19,7 @@ After using an item to enable "radar/police" detector you will be notified when 
 
 SQL code:
 
-INSERT INTO `essentialmode`.`items` (`name`, `label`, `limit`) VALUES ('radardetector', 'Radar Detector', '5');
+```INSERT INTO `essentialmode`.`items` (`name`, `label`, `limit`) VALUES ('radardetector', 'Radar Detector', '5');```
 
 Example of this being used:
 Video in Finnish
