@@ -17,6 +17,10 @@ Functionality:
 
 After using an item to enable "radar/police" detector you will be notified when there is police close to you and will show them on your map. Even when you drive 350km/h (over 200mph) you should be able to slow down before police's radar will catch you. Police will be removed from your map when they are too far or have stepped out of the vehicle.
 
+SQL code:
+
+INSERT INTO `essentialmode`.`items` (`name`, `label`, `limit`) VALUES ('radardetector', 'Radar Detector', '5');
+
 Example of this being used:
 Video in Finnish
 https://www.youtube.com/watch?v=cxzVc8KcwyQ
